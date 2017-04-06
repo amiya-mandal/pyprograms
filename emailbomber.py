@@ -32,18 +32,18 @@ class SenderTherad(threading.Thread):
             smtp_obj.starttls()
             password=''    #your email password
             smtp_obj.login(form,password)
-            print '\n'
+            print ('\n')
             while(i<50):  #update 50 for for your usage
                 body=MIMEText(k)
                 msg.attach(body)
                 smtp_obj.sendmail(form,self.to,msg.as_string())
                 #time.sleep(5)
-                print i,self.to,'\n'
+                print (i,self.to,'\n')
                 i+=1
-            print '\n'
+            print ('\n')
 
         except:
-            print "error::",sys.exc_info()[1],' ::',sys.exc_info()[0]
+            print ("error::",sys.exc_info()[1],' ::',sys.exc_info()[0])
         finally:
             smtp_obj.quit()
 
@@ -51,7 +51,7 @@ class SenderTherad(threading.Thread):
 
 def main():
     try:
-    	# temp.123@exmaple.com
+        # temp.123@exmaple.com
         p='' #this will contain @example.com
         to=[''] #this will contain temp.123 or more can be added to it 
         k=len(to)
@@ -63,13 +63,13 @@ def main():
         for i in range(k):
             l[i].join()
 
-        print "finished"
+        print("finished")
 
 
     except:
-        print "error::",sys.exc_info()[1],' ::',sys.exc_info()[0]
+        print("error::",sys.exc_info()[1],' ::',sys.exc_info()[0])
     finally:
-        print 'end'
+        print('end')
         sleep(600)
         main()
         #smtp_obj.quit()
