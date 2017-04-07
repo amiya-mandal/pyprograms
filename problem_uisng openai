@@ -1,0 +1,8 @@
+spec
+*64bit ubuntu 16.04
+*python 3.5 used(anaconda to create env)
+*sublime as texteditor
+
+problem:-
+* unable to start the vnc server and you can check in the image
+
